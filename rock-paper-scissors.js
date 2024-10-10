@@ -3,6 +3,8 @@ let computerScore = 0;
 
 console.log("Man vs Machine a great Duel!")
 
+// Random computer choice
+
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 100);
     if (randomNumber % 3 === 0) {
@@ -14,9 +16,13 @@ function getComputerChoice() {
     }
 }
 
+// Human choice
+
 function getHumanChoice() {
     return prompt("Type 'rock', 'paper' or 'scissors'");
 }
+
+// One round
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice.toLowerCase() == "rock" && computerChoice == "rock"
@@ -34,6 +40,8 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
+// Five rounds (one round x 5)
+
 function playGame() {
     for (let i = 0; i < 5; i++) {
         playRound(getHumanChoice(), getComputerChoice());        
@@ -44,6 +52,8 @@ function playGame() {
     console.log(computerScore);
     winnerAnnouncement();
 }
+
+// self explanatory function name
 
 function winnerAnnouncement() {
     if (humanScore > computerScore) {
