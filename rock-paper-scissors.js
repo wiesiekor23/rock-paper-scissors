@@ -42,7 +42,7 @@ function playRound(humanChoice, computerChoice) {
 
 // Five rounds (one round x 5)
 
-function playGame() {
+/*function playGame() {
     for (let i = 0; i < 5; i++) {
         playRound(getHumanChoice(), getComputerChoice());        
     }
@@ -67,4 +67,17 @@ function winnerAnnouncement() {
 }
 
 playGame();
-console.log(winnerAnnouncement());
+console.log(winnerAnnouncement());*/
+
+// DOM manipulation
+
+const bodyContainer = document.querySelector("body");
+
+const btn1 = document.createElement("button");
+btn1.textContent = "Rock";
+const btn2 = document.createElement("button");
+btn2.textContent = "Paper";
+const btn3 = document.createElement("button");
+btn3.textContent = "Scissors";
+
+bodyContainer.append(btn1, btn2, btn3);
