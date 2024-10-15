@@ -2,6 +2,44 @@ let humanScore = 0;
 let computerScore = 0;
 
 console.log("Man vs Machine a great Duel!")
+const bodyContainer = document.querySelector("body");
+
+const btnRock = document.createElement("button");
+btnRock.textContent = "Rock";
+const btnPaper = document.createElement("button");
+btnPaper.textContent = "Paper";
+const btnScissors = document.createElement("button");
+btnScissors.textContent = "Scissors";
+
+bodyContainer.append(btnRock, btnPaper, btnScissors);
+
+
+//function getHumanChoice() {
+    let winner = "1";    
+
+    btnRock.addEventListener("click", () => {
+        let computerChoice = getComputerChoice();
+        let humanChoice = "rock";
+
+        console.log(playRound(humanChoice, computerChoice));
+    });
+    
+
+    btnPaper.addEventListener("click", () => {
+        let computerChoice = getComputerChoice();
+        let humanChoice = "paper";
+
+        console.log(playRound(humanChoice, computerChoice));
+    });
+
+    btnScissors.addEventListener("click", () => {
+        let computerChoice = getComputerChoice();
+        let humanChoice = "scissors";
+
+        console.log(playRound(humanChoice, computerChoice));
+    });
+    
+//}
 
 // Random computer choice
 
@@ -18,66 +56,65 @@ function getComputerChoice() {
 
 // Human choice
 
-function getHumanChoice() {
-    return prompt("Type 'rock', 'paper' or 'scissors'");
-}
+
+// TRY CALLBACK  !!!
+
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice == "rock" && computerChoice == "rock"
+        || humanChoice == "paper" && computerChoice == "paper"
+        || humanChoice == "scissors" && computerChoice == "scissors") {
+            return "Draw!!!";
+        } else if (humanChoice == "rock" && computerChoice == "scissors"
+            || humanChoice == "paper" && computerChoice == "rock"
+            || humanChoice == "scissors" && computerChoice == "paper") {
+                humanScore++;
+                return "You've won!";
+            } else {
+                computerScore++;
+                return "You lose!";
+            }
+        }
+        //console.log(getHumanChoice());
+
 
 // One round
 
-function playRound(humanChoice, computerChoice) {
-    if (humanChoice.toLowerCase() == "rock" && computerChoice == "rock"
-        || humanChoice.toLowerCase() == "paper" && computerChoice == "paper"
-        || humanChoice.toLowerCase() == "scissors" && computerChoice == "scissors") {
-        return "Draw!!!";
-    } else if (humanChoice.toLowerCase() == "rock" && computerChoice == "scissors"
-        || humanChoice.toLowerCase() == "paper" && computerChoice == "rock"
-        || humanChoice.toLowerCase() == "scissors" && computerChoice == "paper") {
-        humanScore++;
-        return "You've won!";
-    } else {
-        computerScore++;
-        return "You lose!";
-    }
-}
+///console.log(getHumanChoice());
+//console.log(getComputerChoice());
+//playRound(getHumanChoice(), getComputerChoice());
+//console.log(playRound(getHumanChoice(), getComputerChoice()));
 
 // Five rounds (one round x 5)
 
 /*function playGame() {
     for (let i = 0; i < 5; i++) {
         playRound(getHumanChoice(), getComputerChoice());        
-    }
-    console.log("Your points:")
-    console.log(humanScore);
-    console.log("Machine points:")
-    console.log(computerScore);
-    winnerAnnouncement();
-}
-
-// self explanatory function name
-
-function winnerAnnouncement() {
-    if (humanScore > computerScore) {
-        return "You've won the game!"
-    } else if (humanScore < computerScore) {
-        return "You've lost the game :("
-    } else {
-        return "Game ended with a draw. Try again."
-    }
-
-}
-
-playGame();
-console.log(winnerAnnouncement());*/
-
-// DOM manipulation
-
-const bodyContainer = document.querySelector("body");
-
-const btn1 = document.createElement("button");
-btn1.textContent = "Rock";
-const btn2 = document.createElement("button");
-btn2.textContent = "Paper";
-const btn3 = document.createElement("button");
-btn3.textContent = "Scissors";
-
-bodyContainer.append(btn1, btn2, btn3);
+        }
+        console.log("Your points:")
+        console.log(humanScore);
+        console.log("Machine points:")
+        console.log(computerScore);
+        winnerAnnouncement();
+        }
+        
+        // self explanatory function name
+        
+        function winnerAnnouncement() {
+            if (humanScore > computerScore) {
+                return "You've won the game!"
+                } else if (humanScore < computerScore) {
+                    return "You've lost the game :("
+                    } else {
+                        return "Game ended with a draw. Try again."
+                }
+                
+                }
+                
+                playGame();
+                console.log(winnerAnnouncement());*/
+                
+                // DOM manipulation
+                
+                       
+                       
+                       
