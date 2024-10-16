@@ -18,17 +18,14 @@ bodyContainer.appendChild(displayDiv);
 displayDiv.textContent = humanScore + " : " + computerScore;
 
 btnRock.addEventListener("click", () => {
-
     playGame("rock");
 });
 
 btnPaper.addEventListener("click", () => {
-
     playGame("paper");
 });
 
 btnScissors.addEventListener("click", () => {
-
     playGame("scissors");
 });
 
